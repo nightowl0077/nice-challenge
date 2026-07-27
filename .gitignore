@@ -1,0 +1,6 @@
+.DS_Store
+*.dd
+*.img
+*.E01
+recovered_*
+stolen_cards.csv
