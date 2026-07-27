@@ -1,16 +1,18 @@
-# NICE Challenge Write-Ups
+# NICE Challenge Walkthroughs and Writeups
 
-My collection of walkthroughs and methodology write-ups for the [NICE Challenge Project](https://nice-challenge.com/).
+A growing collection of **walkthroughs, writeups, and step-by-step explanations** for [NICE Challenge Project](https://nice-challenge.com/) cybersecurity labs. Each folder documents one challenge end-to-end: methodology, exact commands, annotated screenshots, findings, and the write-up submitted through the workspace Documentation tab.
 
-The NICE Challenge Project develops real-world cybersecurity challenges inside virtualized business environments, mapped to the [DoD Cyber Workforce Framework (DCWF)](https://public.cyber.mil/wid/dcwf/) and the [NICE Workforce Framework for Cybersecurity](https://niccs.cisa.gov/workforce-development/nice-framework).
+Focus areas: **digital forensics and incident response (DFIR)**, **blue-team analysis**, **systems administration**, and hands-on tooling like **The Sleuth Kit**, **Autopsy**, **Volatility**, **Wireshark**, **Splunk**, and the Linux forensics stack.
 
-Each folder in this repo is a self-contained write-up for one challenge, including the methodology I used, the exact commands run, screenshots from the challenge environment, and the findings I submitted through the workspace Documentation tab.
+Everything here is aligned to the [DoD Cyber Workforce Framework (DCWF)](https://public.cyber.mil/wid/dcwf/) and the [NICE Workforce Framework for Cybersecurity](https://niccs.cisa.gov/workforce-development/nice-framework), so each write-up can also serve as evidence of the specific DCWF task it exercises.
 
 ## Challenges
 
-| # | Challenge | DCWF Work Role | Techniques |
+| Challenge | DCWF Work Role | Techniques | Walkthrough |
 |---|---|---|---|
-| - | [Credit Card Concealment](CreditCardConcealment/) | Cyber Defense Forensics Analyst | Static media analysis, FAT16 deleted-file recovery, The Sleuth Kit, raw-image carving |
+| Credit Card Concealment | Cyber Defense Forensics Analyst (task 1082) | Static media analysis, FAT16 deleted-file recovery, The Sleuth Kit (`dd`, `mmls`, `fls`, `icat`), raw-image carving | [Read the writeup](credit-card-concealment/) |
+
+More coming as I finish them. Watch or star the repo to get notified when new walkthroughs land.
 
 More coming as I finish them.
 

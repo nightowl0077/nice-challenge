@@ -1,4 +1,4 @@
-# NICE Challenge - Credit Card Concealment
+# NICE Challenge - Credit Card Concealment - Walkthrough and Writeup (The Sleuth Kit / FAT16 Forensics)
 
 ![Credit Card Concealment - a NICE Challenge walkthrough](hero.png)
 
@@ -79,7 +79,7 @@ There are several other ways to enumerate disks on Linux (`fdisk -l`, `blkid`, `
 
 **Screenshot:**
 
-![lsblk output - sda (VM root) and sdb (USB FAT16)](../screenshots/CreditCardConcealment/01-lsblk-identify-usb-device.png)
+![lsblk output - sda (VM root) and sdb (USB FAT16)](../screenshots/credit-card-concealment/01-lsblk-identify-usb-device.png)
 
 **Reading the output:**
 
@@ -136,7 +136,7 @@ sudo lsof /media/playerone/DC83-8C1D
 
 **Screenshot:**
 
-![umount target busy + lsof showing qterminal holding the mount](../screenshots/CreditCardConcealment/02-umount-target-busy-lsof.png)
+![umount target busy + lsof showing qterminal holding the mount](../screenshots/credit-card-concealment/02-umount-target-busy-lsof.png)
 
 The offender is `qterminal PID 3288` with its **cwd** (current working directory) sitting inside the mount. A terminal window was left with its shell `cd`'d into the USB folder, so the kernel treats the mount as in-use.
 
@@ -182,7 +182,7 @@ sudo dd if=/dev/sdb of=~/usbdrive.dd bs=1M status=progress conv=noerror,sync
 
 **Screenshot:**
 
-![lazy umount followed by dd copying 268 MB in ~0.9 s](../screenshots/CreditCardConcealment/03-lazy-umount-and-dd-imaging.png)
+![lazy umount followed by dd copying 268 MB in ~0.9 s](../screenshots/credit-card-concealment/03-lazy-umount-and-dd-imaging.png)
 
 **Result:**
 
@@ -230,7 +230,7 @@ mmls ~/usbdrive.dd
 
 **Screenshot:**
 
-![mmls partition table + fls showing deleted IMG_4991.jpg at inode 4](../screenshots/CreditCardConcealment/04-mmls-fls-deleted-file.png)
+![mmls partition table + fls showing deleted IMG_4991.jpg at inode 4](../screenshots/credit-card-concealment/04-mmls-fls-deleted-file.png)
 
 **Output:**
 
@@ -370,7 +370,7 @@ strings ~/usbdrive.dd | grep -aE '[0-9]{4}[- ]?[0-9]{4}[- ]?[0-9]{4}[- ]?[0-9]{4
 
 **Screenshot:**
 
-![icat 4 KB recovery + strings|grep hitting the recovered CSV of stolen cards](../screenshots/CreditCardConcealment/05-icat-strings-grep-recovered-cards.png)
+![icat 4 KB recovery + strings|grep hitting the recovered CSV of stolen cards](../screenshots/credit-card-concealment/05-icat-strings-grep-recovered-cards.png)
 
 **Result:**
 
